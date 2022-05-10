@@ -40,26 +40,30 @@ console.log(`${"Array bombs ="} ${bombs}`);
 //    L’utente non può inserire più volte lo stesso numero.
 // 2.1 creo un array vuoto che popolerò con i numeri inseriti dall'utente
 let userNumbers = [];
-// 2.2 per x volte: chiedo all'utente di inserire un numero
-// 2.3 FINTANTO CHE la lunghezza dell'array userNumbers (numeri scelti dall'utente) è minore del numero di tentativi a disposizione
-while (userNumbers.length < userTries) {
-    // 2.4 dico all'utente di inserire un numero tra 1 e 100
+// 2.2 imposto una variabile con valore 'false' PER CONTROLLARE I CICLI
+let gameOver = false;
+// 2.3 per x volte: chiedo all'utente di inserire un numero
+// 2.4 FINTANTO CHE la lunghezza dell'array userNumbers (numeri scelti dall'utente) è minore del numero di tentativi a disposizione E gameOver è settato su 'false'
+while ((userNumbers.length < userTries) || (gameOver = false)) {
+    // 2.5 dico all'utente di inserire un numero tra 1 e 100
     let userNumb = Number(prompt("Inserisci un numero tra 1 e 100"));
-    // 2.4 SE l'utente inserisce un numero già presente nell'array bombs
+    // 2.6 SE l'utente inserisce un numero già presente nell'array bombs
     if (bombs.includes(userNumb)) {
-        // 2.5 la partita termina e l'utente ha perso
+        // 2.7 la partita termina e l'utente ha perso
         alert("Hai beccato una bomba! Hai perso...");
-    // 2.6 ALTRIMENTI SE l'utente inserisce un NaN OPPURE un numero minore o uguale a 0 OPPURE maggiore di 100
+        gameOver = true;
+    // 2.8 ALTRIMENTI SE l'utente inserisce un NaN OPPURE un numero minore o uguale a 0 OPPURE maggiore di 100
     } else if (isNaN(userNumb) || (userNumb <= 0) || (userNumb > 100)) {
-        // 2.7 gli dico dolcemente che ha sbagliato
-        alert("Ho detto un NUMERO TRA 1 E 100!");
-    // 2.8 ALTRIMENTI SE l'utente inserisce un numero che aveva già inserito precedentemente
+        // 2.9 gli dico dolcemente che ha sbagliato
+        alert("Sai leggere? Ho detto un NUMERO TRA 1 E 100!");
+    // 2.10 ALTRIMENTI SE l'utente inserisce un numero che aveva già inserito precedentemente
     } else if (userNumbers.includes(userNumb)) {
-        // 2.9 lo avverto che lo aveva già inserito
+        // 2.11 lo avverto che lo aveva già inserito
         alert("Hai già inserito questo numero.")
-    // 2.10 ALTRIMENTI
+    // 2.12 ALTRIMENTI
     } else {
-        // 2.11 lo aggiungo all'array userNumbers e continuo
+        // 2.13 tranquillizzo l'utente, aggiungo il suo numermo all'array userNumbers e continuo
+        alert("Ottimo! Fin qui niente bombe. Continua.")
         userNumbers.push(userNumb);
     }
 }
