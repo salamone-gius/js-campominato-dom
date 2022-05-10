@@ -14,20 +14,60 @@
 // con difficoltà 2 => tra 1 e 50
 
 
+let userTries = 5;
+
 // 1. faccio generare al computer 16 numeri casuali tra 1 e 100 (non ci possono essere duplicati);
 // 1.1 creo un array vuoto che popolerò con 16 numeri casuali
-let random16 = [];
-
-// 1.2 per 16 volte: creo un numero casuale
-for (let i = 0; i < 16; i++) {
-    let random = Math.floor(Math.random() * 100 + 1);
-    // 1.3 SE il numero generato NON è già presente nell'array random16
-    if (!random16.includes(random)) {
-        // 1.4 ALLORA lo aggiungo, ALTRIMENTI niente
-        random16.push(random);
-    } else {
-
+let bombs = [];
+// 1.2 FINTANTO CHE l'array bombs contiene meno di 16 elementi
+while (bombs.length < 16) {
+    // 1.3 creo un numero casuale
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    // 1.4 Scorrendo l'array devo controllare che il numero casuale non sia presente nell'array bombs
+    for (let i = 0; i <= bombs.length; i++) {
+        // 1.5 SE l'array bombs NON (!) include il randomNumber
+        if (!bombs.includes(randomNumber)) {
+            // 1.6 lo aggiungo all'array bombs
+            bombs.push(randomNumber);
+        // 1.7 ALTRIMENTI niente
+        } else {
+        }
     }
 }
 
-console.log(`${"random16 ="} ${random16}`);
+
+// for (let i = 0; i < 16; i++) {
+//     let random = Math.floor(Math.random() * 100 + 1);
+//     // 1.3 SE il numero generato NON è già presente nell'array bombs
+//     if (!bombs.includes(random)) {
+//         // 1.4 ALLORA lo aggiungo,
+//         bombs.push(random);
+//     // ALTRIMENTI niente
+//     } else {
+//     }
+// }
+// console.log(bombs);
+
+// // 2. chiedo all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
+// //    L’utente non può inserire più volte lo stesso numero.
+// // 2.1 creo un array vuoto che popolerò con 16 numeri inseriti dall'utente
+// let userNumbers = [];
+// // 2.2 per 84 volte: chiedo all'utente di inserire un numero
+// do {
+//     for (let i = 0; i < userTries; i++) {
+//         let userNumb = Number(prompt("Inserisci un numero tra 1 e 100"));
+//         console.log(`${"Al giro"} ${i} ${"userNumb è"} ${userNumb}`);
+//         // 2.3 SE il numero inserito: NON è già presente nell'array userNumbers;
+//         //                          ED NON è minore o uguale a 0;
+//         //                          ED NON è maggiore di 100;
+//         //                          E NON è un NaN;
+//         if ((!userNumbers.includes(userNumb)) && (userNumb > 0) && (userNumb <= 100) && (!isNaN(userNumb))) {
+//             // ALLORA lo aggiungo all'array userNumbers,
+//             userNumbers.push(userNumb);
+//             alert("Ottimo! Niente bomba. Continua.");
+//         // 2.4 ALTRIMENTI, SE il numero inserito è contenuto nell'array bombs
+//         } else {
+//             alert("Ho detto UN NUMERO TRA 1 E 100! Riprova.");
+//         }
+//     }
+// } while (bombs.includes(userNumb) || (userTries = 0));
