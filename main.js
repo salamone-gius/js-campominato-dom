@@ -34,6 +34,7 @@ while (bombs.length < 16) {
         }
     }
 }
+
 console.log(`${"Array bombs ="} ${bombs}`);
 
 // 2. chiedo all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
@@ -44,13 +45,13 @@ let userNumbers = [];
 let gameOver = false;
 // 2.3 per x volte: chiedo all'utente di inserire un numero
 // 2.4 FINTANTO CHE la lunghezza dell'array userNumbers (numeri scelti dall'utente) è minore del numero di tentativi a disposizione E gameOver è settato su 'false'
-while ((userNumbers.length < userTries) || (gameOver = false)) {
+while ((userNumbers.length < userTries) && (gameOver === false)) {
     // 2.5 dico all'utente di inserire un numero tra 1 e 100
     let userNumb = Number(prompt("Inserisci un numero tra 1 e 100"));
     // 2.6 SE l'utente inserisce un numero già presente nell'array bombs
     if (bombs.includes(userNumb)) {
         // 2.7 la partita termina e l'utente ha perso
-        alert("Hai beccato una bomba! Hai perso...");
+        alert("Hai beccato una bomba!");
         gameOver = true;
     // 2.8 ALTRIMENTI SE l'utente inserisce un NaN OPPURE un numero minore o uguale a 0 OPPURE maggiore di 100
     } else if (isNaN(userNumb) || (userNumb <= 0) || (userNumb > 100)) {
@@ -68,19 +69,21 @@ while ((userNumbers.length < userTries) || (gameOver = false)) {
     }
 }
 
-console.log(`${"Array userNumbers ="} ${userNumbers}`);
+console.log(gameOver);
 
-// //         // 2.3 SE il numero inserito: NON è già presente nell'array userNumbers;
-// //         //                          ED NON è minore o uguale a 0;
-// //         //                          ED NON è maggiore di 100;
-// //         //                          E NON è un NaN;
-// //         if ((!userNumbers.includes(userNumb)) && (userNumb > 0) && (userNumb <= 100) && (!isNaN(userNumb))) {
-// //             // ALLORA lo aggiungo all'array userNumbers,
-// //             userNumbers.push(userNumb);
-// //             alert("Ottimo! Niente bomba. Continua.");
-// //         // 2.4 ALTRIMENTI, SE il numero inserito è contenuto nell'array bombs
-// //         } else {
-// //             alert("Ho detto UN NUMERO TRA 1 E 100! Riprova.");
-// //         }
-//     }
-// } while (bombs.includes(userNumb) || (userTries = 0));
+// 3. Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
+// 3.1 SE l'utente ha beccato una bomba (gameOver === true)
+if (gameOver === true) {
+    // 3.2 gli comunico che ha perso
+    alert("Hai perso...");
+// 3.3 ALTRIMENTI
+} else {
+    // 3.4 gli comunico che ha vinto
+    alert("Complimenti! Hai vinto!");
+}
+
+// 3.5 comunico (in ogni caso) all'utente il suo punteggio (di quanti elementi è composto l'array dei suoi numeri)
+alert(`${"Il tuo punteggio:"} ${userNumbers.length}`);
+
+
+console.log(`${"Array userNumbers ="} ${userNumbers}`);
