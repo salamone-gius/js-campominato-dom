@@ -49,9 +49,17 @@ while (userNumbers.length < userTries) {
     if (bombs.includes(userNumb)) {
         // 2.5 la partita termina e l'utente ha perso
         alert("Hai beccato una bomba! Hai perso...");
-        // 2.6 ALTRIMENTI
+    // 2.6 ALTRIMENTI SE l'utente inserisce un NaN OPPURE un numero minore o uguale a 0 OPPURE maggiore di 100
+    } else if (isNaN(userNumb) || (userNumb <= 0) || (userNumb > 100)) {
+        // 2.7 gli dico dolcemente che ha sbagliato
+        alert("Ho detto un NUMERO TRA 1 E 100!");
+    // 2.8 ALTRIMENTI SE l'utente inserisce un numero che aveva già inserito precedentemente
+    } else if (userNumbers.includes(userNumb)) {
+        // 2.9 lo avverto che lo aveva già inserito
+        alert("Hai già inserito questo numero.")
+    // 2.10 ALTRIMENTI
     } else {
-        // 2.7 lo aggiungo all'array userNumbers e continuo
+        // 2.11 lo aggiungo all'array userNumbers e continuo
         userNumbers.push(userNumb);
     }
 }
