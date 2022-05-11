@@ -1,29 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+        <!-- /Google Font -->
         <title>Campo Minato</title>
-    <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+
         <!-- 2 sections: logo + title (left); level selection + play button (right) -->
         <header>
-            <div class="header container">
-
+            <div class="flex container">
+                <div class="flex header left">
+                    <img src="img/Minesweeper.webp" alt="Bomb">
+                    <h1 class="title">Campo Minato</h1>
+                </div>
+                <div class="flex header right">
+                    <div class="difficulty">Difficoltà:</div>
+                    <select class="level" name="level" id="">
+                        <option value="opt1">Facile</option>
+                        <option value="opt1">Medio</option>
+                        <option value="opt1">Difficile</option>
+                    </select>
+                    <button class="play-btn">Gioca</button>
+                </div>
             </div>
         </header>
-        <!-- 2 sections: logo + title (left); level selection + play button (right) -->
+        <!-- /2 sections: logo + title (left); level selection + play button (right) -->
 
         <!-- 2 sections: gamefield (top); messages (bottom)-->
         <main></main>
-        <!-- 2 sections: gamefield (top); messages (bottom)-->
+        <!-- /2 sections: gamefield (top); messages (bottom)-->
 
         <!-- credits -->
         <footer></footer>
-        <!-- credits -->
+        <!-- /credits -->
         
-        <script src="/js/main.js"></script>
     </body>
 </html>

@@ -1,3 +1,8 @@
+/* DEBUG */
+* {
+    border: 1px solid red;
+}
+
 /* RESET */
 * {
     box-sizing: border-box;
@@ -6,12 +11,68 @@
 }
 
 /* COMMONS */
+body, .header.right select.level {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.flex {
+    display: flex;
+}
+
+button {
+    background-color: rgb(84, 82, 182);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: rgb(114, 112, 212);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
 header .container, footer .container {
     background-color: white;
-    width: 70%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* HEADER */
 header .container {
+    justify-content: space-between;
+}
 
+.header.left, .header.right {
+    align-items: center;
+}
+
+.header.left img {
+    max-width: 50px;
+    margin-right: 20px;
+}
+
+.header.left h1.title {
+    color: rgb(44, 42, 148);
+}
+
+.header.right .difficulty {
+    margin-right: 5px;
+}
+
+.header.right button.play-btn {
+    margin-left: 25px;
+}
+
+.header.right select.level, .header.right option {
+    padding: 2px;
+}
+
+.header.right select.level {
+    transform: translateY(1px);
 }
