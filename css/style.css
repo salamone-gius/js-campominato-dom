@@ -1,0 +1,17 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* COMMONS */
+header .container, footer .container {
+    background-color: white;
+    width: 70%;
+}
+
+/* HEADER */
+header .container {
+
+}
