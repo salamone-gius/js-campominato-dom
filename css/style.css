@@ -82,19 +82,80 @@ header .container {
 main {
     height: 75vh;
     background-color: rgb(114, 112, 212);
+    padding: 20px 0;
 }
 
 main .gamefield {
-    width: 50%;
     height: 60vh;
-    margin: 20px auto;
+    margin: auto;
+}
+
+main .row {
+    width: 100%;
 }
 
 main .box {
-    width: calc();
+    border: 1px solid rgb(44, 42, 148);
+    height: 100%;
+    background-color: lightgray;
+    cursor: pointer;
 }
 
+main .box:hover {
+    background-color: rgb(44, 42, 148);
+}
 
+main .box:active {
+    transform: translateY(1px);
+}
+
+main h2.message {
+    color: rgb(44, 42, 148);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* LEVEL EASY */
+main .easy.gamefield {
+    width: 60vh;
+    display: none;
+}
+
+main .easy.row {
+    height: calc(100% / 9);
+}
+
+main .easy.box {
+    width: calc(100% / 9);
+}
+
+/* LEVEL MEDIUM */
+main .medium.gamefield {
+    width: 60vh;
+    display: none;
+    }
+
+main .medium.row {
+    height: calc(100% / 16);
+}
+
+main .medium.box {
+    width: calc(100% / 16);
+}
+
+/* LEVEL HARD */
+main .hard.gamefield {
+    width: 110vh;
+    display: none;
+    }
+
+main .hard.row {
+    height: calc(100% / 16);
+}
+
+main .hard.box {
+    width: calc(100% / 30);
+}
 
 /* FOOTER */
 footer .container {
