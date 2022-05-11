@@ -84,10 +84,15 @@ main {
     background-color: rgb(114, 112, 212);
 }
 
+main .gamefield {
+    width: 50%;
+    height: 60vh;
+    margin: 20px auto;
+}
 
-
-
-
+main .box {
+    width: calc();
+}
 
 
 
@@ -97,7 +102,7 @@ footer .container {
 }
 
 footer i {
-    color: red;
+    color: rgb(44, 42, 148);
 }
 
 footer span {
