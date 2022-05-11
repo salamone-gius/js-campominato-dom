@@ -40,6 +40,7 @@ button:active {
 header .container, footer .container {
     background-color: white;
     width: 80%;
+    height: 20vh;
     margin: 0 auto;
 }
 
@@ -48,7 +49,7 @@ header .container {
     justify-content: space-between;
 }
 
-.header.left, .header.right {
+.header.left, .header.right, header .container, footer .container {
     align-items: center;
 }
 
@@ -75,4 +76,21 @@ header .container {
 
 .header.right select.level {
     transform: translateY(1px);
+}
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer i {
+    color: red;
+}
+
+footer span {
+    font-family: 'Water Brush', cursive;
+    font-size: 20px;
 }
