@@ -23,7 +23,7 @@ button {
     background-color: rgb(84, 82, 182);
     color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 8px;
     border: 2px solid transparent;
     cursor: pointer;
     font-weight: 700;
@@ -40,13 +40,13 @@ button:active {
 header .container, footer .container {
     background-color: white;
     width: 80%;
-    height: 20vh;
     margin: 0 auto;
 }
 
 /* HEADER */
 header .container {
     justify-content: space-between;
+    height: 15vh;
 }
 
 .header.left, .header.right, header .container, footer .container {
@@ -78,6 +78,12 @@ header .container {
     transform: translateY(1px);
 }
 
+/* MAIN */
+main {
+    height: 75vh;
+    background-color: rgb(114, 112, 212);
+}
+
 
 
 
@@ -86,6 +92,10 @@ header .container {
 
 
 /* FOOTER */
+footer .container {
+    height: 10vh;
+}
+
 footer i {
     color: red;
 }
@@ -93,4 +103,53 @@ footer i {
 footer span {
     font-family: 'Water Brush', cursive;
     font-size: 20px;
+}
+
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 770px) {
+    .header.left img {
+        max-width: 20px;
+        margin-right: 5px;
+    }
+    
+    .header.left h1.title {
+        font-size: 20px;
+    }
+
+    .header.right, footer {
+        font-size: 12px;
+    }
+    
+    footer span {
+        font-size: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 560px) {
+    header .container, footer .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .header.left img, .header.right .difficulty{
+        display: none;
+    }
+    
+    .header.left h1.title {
+        font-size: 10px;
+    }
+
+    .header.right, footer {
+        font-size: 8px;
+    }
+    
+    footer span {
+        font-size: 10px;
+    }
+    
 }
